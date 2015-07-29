@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nspacelib.Types", "nspacelib.Types\nspacelib.Types.csproj", "{88748527-2154-4423-8B66-24B6C608C760}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nspacelib.Math", "nspacelib.Math\nspacelib.Math.csproj", "{46BF317C-8BCD-431E-A461-CF9AA6222E69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nspacelib.Geometry", "nspacelib.Geometry\nspacelib.Geometry.csproj", "{5699CBE5-7BF2-4A74-AF88-CF4612F8CF2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nspacelib.Geometry.Test", "nspacelib.Geometry.Test\nspacelib.Geometry.Test.csproj", "{C13CE755-9DC2-41F3-B97F-77E0F7C4025E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{46BF317C-8BCD-431E-A461-CF9AA6222E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46BF317C-8BCD-431E-A461-CF9AA6222E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46BF317C-8BCD-431E-A461-CF9AA6222E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5699CBE5-7BF2-4A74-AF88-CF4612F8CF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5699CBE5-7BF2-4A74-AF88-CF4612F8CF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5699CBE5-7BF2-4A74-AF88-CF4612F8CF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5699CBE5-7BF2-4A74-AF88-CF4612F8CF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13CE755-9DC2-41F3-B97F-77E0F7C4025E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13CE755-9DC2-41F3-B97F-77E0F7C4025E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13CE755-9DC2-41F3-B97F-77E0F7C4025E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13CE755-9DC2-41F3-B97F-77E0F7C4025E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
