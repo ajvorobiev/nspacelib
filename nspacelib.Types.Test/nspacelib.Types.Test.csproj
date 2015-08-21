@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C13CE755-9DC2-41F3-B97F-77E0F7C4025E}</ProjectGuid>
+    <ProjectGuid>{FCE2CC09-2012-49C4-97C4-1875E5792E04}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nspacelib.Geometry.Test</RootNamespace>
-    <AssemblyName>nspacelib.Geometry.Test</AssemblyName>
+    <RootNamespace>nspacelib.Types.Test</RootNamespace>
+    <AssemblyName>nspacelib.Types.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -45,17 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2DShapes\RectangleTestFixture.cs" />
-    <Compile Include="2DShapes\SquareTestFixture.cs" />
+    <Compile Include="ComplexNumberTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\nspacelib.Geometry\nspacelib.Geometry.csproj">
-      <Project>{5699CBE5-7BF2-4A74-AF88-CF4612F8CF2A}</Project>
-      <Name>nspacelib.Geometry</Name>
+    <ProjectReference Include="..\nspacelib.Types\nspacelib.Types.csproj">
+      <Project>{88748527-2154-4423-8B66-24B6C608C760}</Project>
+      <Name>nspacelib.Types</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

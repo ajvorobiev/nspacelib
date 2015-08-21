@@ -1,5 +1,6 @@
 ﻿namespace nspacelib.Types
 {
+    using System.IO;
     using System.Text.RegularExpressions;
 
     /// <summary>
@@ -110,30 +111,30 @@
         /// The statement to parse.
         /// </param>
         /// <returns>
-        /// The <see cref="ComplexNumber"/> parsed from the string. Null is parsing failed.
+        /// The <see cref="ComplexNumber"/> parsed from the string. Null if parsing failed.
         /// </returns>
         public static ComplexNumber Parse(string statement)
         {
-            var pattern = @"(^([-]?[\d]+))?(([+-]+)([\d]+)?i)?";
+            const string pattern = @"(^([-]?[\d]+))?(([+-]+)([\d]+)?i)?";
 
             if (Regex.IsMatch(statement, pattern))
             {
                 var number = new ComplexNumber();
                 var matches = Regex.Match(statement, pattern);
 
-                if (matches.Captures.Count != 0)
+                if (matches.Groups.Count != 0)
                 {
                     // imaginary part is present
-                    if (matches.Captures.Count > 2)
+                    if (matches.Groups.Count > 2)
                     {
                         // imaginary operator
-                        var imSign = matches.Captures[3].Value;
+                        var imSign = matches.Groups[4].Value;
 
-                        if (matches.Captures.Count > 4)
+                        if (matches.Groups.Count > 5)
                         {
                             // imaginary part
                             double imPart;
-                            if (!double.TryParse(matches.Captures[4].Value, out imPart))
+                            if (!double.TryParse(matches.Groups[5].Value, out imPart))
                             {
                                 return null;
                             }
@@ -149,15 +150,48 @@
                         {
                             number.Im *= -1;
                         }
-                        
                     }
-                    
 
-                    // real part is present
+                    // real part
+                    double rePart;
+                    if (!double.TryParse(matches.Groups[1].Value, out rePart))
+                    {
+                        return null;
+                    }
+
+                    number.Re = rePart;
+
+                    return number;
                 }
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Tries to parse the statement to a <see cref="ComplexNumber"/>
+        /// </summary>
+        /// <param name="statement">
+        /// The statement to parse.
+        /// </param>
+        /// <param name="complexNumber">
+        /// The <see cref="ComplexNumber"/> parsed from the string. A new one if parsing failed.
+        /// </param>
+        /// <returns>
+        /// True if parse succeeded and false otherwise.
+        /// </returns>
+        public static bool TryParse(string statement, out ComplexNumber complexNumber)
+        {
+            var parsedNumber = Parse(statement);
+
+            if (parsedNumber == null)
+            {
+                complexNumber = new ComplexNumber();
+                return false;
+            }
+
+            complexNumber = parsedNumber;
+            return true;
         }
     }
 }
